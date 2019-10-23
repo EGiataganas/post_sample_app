@@ -9,6 +9,9 @@ RUN bash -c "export DEBIAN_FRONTEND=noninteractive && \
 
 RUN gem install bundler --no-doc
 
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
+        apt-get install -y nodejs
+
 WORKDIR /app
 
 ADD . /app
